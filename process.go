@@ -23,7 +23,7 @@ func joinMarkers(words []string) []string {
 	result := []string{}
 	for i := 0; i < len(words); i++ {
 		w := words[i]
-		if strings.HasPrefix(w, "(") && strings.HasSuffix(w, ",") && i+1 < len(words) {
+		if strings.HasPrefix(w, "(") && strings.HasSuffix(w, ",") && i+1 < len(words) && strings.HasSuffix(words[i+1], ")") {
 			w = w + words[i+1]
 			i++
 		}
