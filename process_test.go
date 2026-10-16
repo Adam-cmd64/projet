@@ -36,10 +36,10 @@ func TestProcess(t *testing.T) {
 		{"a 'amazing' day", "an 'amazing' day"},
 		{"zz (hex)", "zz"},
 	}
-for _, c := range cases {
-	got := Process(c.in)
-	if got != c.want {
-		t.Error("entrée :", c.in, "| obtenu :", got, "| attendu :", c.want)
+	for _, c := range cases {
+		got := Process(c.in)
+		if got != c.want {
+			t.Error("entrée :", c.in, "| obtenu :", got, "| attendu :", c.want)
+		}
 	}
-}
 }
