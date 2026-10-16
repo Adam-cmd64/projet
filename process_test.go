@@ -35,6 +35,7 @@ func TestProcess(t *testing.T) {
 		{"A hour", "An hour"},
 		{"a 'amazing' day", "an 'amazing' day"},
 		{"zz (hex)", "zz"},
+		{"Simply add 42, (hex) and 10 (bin)", "Simply add 66, and 2"},
 	}
 	for _, c := range cases {
 		got := Process(c.in)

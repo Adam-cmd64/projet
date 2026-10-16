@@ -97,11 +97,13 @@ func transform(cmd string, word string) string {
 }
 
 func toDecimal(word string, base int) string {
-	number, err := strconv.ParseInt(word, base, 64)
+	digits := strings.TrimRight(word, ".,!?:;")
+	punct := word[len(digits):]
+	number, err := strconv.ParseInt(digits, base, 64)
 	if err != nil {
 		return word
 	}
-	return strconv.Itoa(int(number))
+	return strconv.Itoa(int(number)) + punct
 }
 
 func capitalize(word string) string {
